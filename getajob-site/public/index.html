@@ -115,7 +115,40 @@
             font-size: 0.82rem;
             color: var(--text-muted);
             max-width: 500px;
-            margin: 0 auto 1.8rem;
+            margin: 0 auto 1.2rem;
+        }
+
+        .donate {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: var(--text-faint);
+            margin-bottom: 1.4rem;
+        }
+
+        .donate-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.55rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid var(--brand);
+            color: var(--brand);
+            text-decoration: none;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+            will-change: transform;
+        }
+
+        .donate-btn:hover {
+            background: var(--brand);
+            color: var(--bg-dark);
+            transform: translateY(-2px);
         }
 
         .install-section {
@@ -393,6 +426,10 @@
             <p class="subtitle">
                 AI job search for faster tracking, tailored resumes, and better follow-up.
             </p>
+            <div class="donate">
+                <span>Like it?</span>
+                <a class="donate-btn" href="https://buymeacoffee.com/hackeroos">Donate a coffee</a>
+            </div>
         </section>
 
         <section class="install-section" id="install">
