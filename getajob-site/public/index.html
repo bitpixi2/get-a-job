@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetAJob — AI-Powered Job Search Skill</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #151c18;
+            --bg-card: #0f1411;
+            --bg-elevated: #131a15;
+            --brand: #f97316;
+            --claude: #C15F3C;
+            --openclaw: #FF5A2D;
+            --accent-soft: rgba(249, 115, 22, 0.12);
+            --text-main: #e8f2ec;
+            --text-muted: #8ea29a;
+            --text-faint: #5f6d66;
+            --border-color: #1f2a23;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: radial-gradient(900px 360px at 50% -120px, rgba(249, 115, 22, 0.14), transparent 70%), var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        ::selection {
+            background: var(--accent-soft);
+            color: var(--text-main);
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 3rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1.75rem;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--brand);
+            letter-spacing: 0.04em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.18s ease, transform 0.18s ease;
+            will-change: transform;
+        }
+
+        .nav-links a:hover {
+            color: var(--brand);
+            transform: translateY(-1px);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 1.4rem 0 1.6rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.28rem 0.7rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            font-size: 0.62rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5.5vw, 2.8rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.04em;
+            color: var(--brand);
+        }
+
+        .subtitle {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto 1.8rem;
+        }
+
+        .install-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.1rem;
+            margin: 1.6rem 0 2rem;
+        }
+
+        .install-card {
+            --card-accent: var(--brand);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+            will-change: transform;
+        }
+
+        .install-card.claude {
+            --card-accent: var(--claude);
+        }
+
+        .install-card.openclaw {
+            --card-accent: var(--openclaw);
+        }
+
+        .install-card:hover {
+            border-color: var(--card-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 0 0 1px color-mix(in srgb, var(--card-accent) 35%, transparent);
+        }
+
+        .install-header {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .install-header h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--card-accent);
+        }
+
+        .install-header .platform-badge {
+            padding: 0.2rem 0.6rem;
+            border: 1px solid var(--border-color);
+            font-size: 0.62rem;
+            color: var(--text-faint);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .install-body {
+            padding: 1.25rem;
+        }
+
+        .terminal {
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0.45rem 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .terminal-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 999px;
+            opacity: 0.7;
+        }
+
+        .terminal-dot.red { background: #ff5f56; }
+        .terminal-dot.yellow { background: #ffbd2e; }
+        .terminal-dot.green { background: #27c93f; }
+
+        .terminal-body {
+            padding: 0.9rem 1rem;
+            font-size: 0.78rem;
+            overflow-x: auto;
+        }
+
+        .terminal-line {
+            display: flex;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+
+        .terminal-prompt {
+            color: var(--card-accent);
+        }
+
+        .terminal-command {
+            color: var(--text-main);
+        }
+
+        .terminal-comment {
+            color: var(--text-faint);
+            font-size: 0.68rem;
+            margin-top: 0.5rem;
+        }
+
+        .copy-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.7rem;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+            will-change: transform;
+            margin-bottom: 1rem;
+        }
+
+        .copy-btn:hover {
+            border-color: var(--card-accent);
+            color: var(--card-accent);
+            background: color-mix(in srgb, var(--card-accent) 12%, transparent);
+            transform: translateY(-2px);
+        }
+
+        .copy-btn.copied {
+            background: var(--card-accent);
+            border-color: var(--card-accent);
+            color: var(--bg-dark);
+        }
+
+        .steps-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .steps-list li {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .steps-list li:last-child {
+            border-bottom: none;
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border: 1px solid var(--card-accent);
+            color: var(--card-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.7rem;
+        }
+
+        .step-text {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .step-text code {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            padding: 0.1rem 0.35rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--card-accent);
+        }
+
+        .download-link {
+            display: block;
+            text-align: center;
+            padding: 0.8rem;
+            margin-top: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+            will-change: transform;
+        }
+
+        .install-card .download-link:hover {
+            border-color: var(--card-accent);
+            color: var(--card-accent);
+            background: color-mix(in srgb, var(--card-accent) 12%, transparent);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0 0.5rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2.5rem;
+        }
+
+        footer p {
+            color: var(--text-faint);
+            font-size: 0.75rem;
+        }
+
+        footer a {
+            color: var(--brand);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--brand);
+            outline-offset: 2px;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.25rem 1.1rem 2.5rem;
+            }
+
+            .terminal-body {
+                font-size: 0.72rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">GetAJob</div>
+            <nav class="nav-links">
+                <a href="#install">Install</a>
+                <a href="https://github.com/bitpixi2/getajob">GitHub</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="badge">AI Job Search Skill</div>
+            <h1>GetAJob</h1>
+            <p class="subtitle">
+                AI job search for faster tracking, tailored resumes, and better follow-up.
+            </p>
+        </section>
+
+        <section class="install-section" id="install">
+            <div class="install-card claude">
+                <div class="install-header">
+                    <h2>Claude</h2>
+                    <span class="platform-badge">Anthropic</span>
+                </div>
+                <div class="install-body">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-command">curl -fsSL https://getajob.hackeroos.com.au/claude/install.sh | bash</span>
+                            </div>
+                            <p class="terminal-comment"># Installs to ~/get-a-job-claude/</p>
+                        </div>
+                    </div>
+                    <button class="copy-btn" onclick="copyCmd(this, 'curl -fsSL https://getajob.hackeroos.com.au/claude/install.sh | bash')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        Copy command
+                    </button>
+
+                    <ul class="steps-list">
+                        <li>
+                            <span class="step-num">1</span>
+                            <span class="step-text">Run the curl command above. Downloads to <code>~/get-a-job-claude/</code></span>
+                        </li>
+                        <li>
+                            <span class="step-num">2</span>
+                            <span class="step-text">In Claude.ai, upload <code>SKILL.md</code> and say <code>Use this skill</code></span>
+                        </li>
+                        <li>
+                            <span class="step-num">3</span>
+                            <span class="step-text">Say <code>Set up my job search</code> to get started</span>
+                        </li>
+                    </ul>
+
+                    <a href="claude/get-a-job-claude.zip" class="download-link" download>
+                        ↓ Download ZIP instead
+                    </a>
+                </div>
+            </div>
+
+            <div class="install-card openclaw">
+                <div class="install-header">
+                    <h2>OpenClaw</h2>
+                    <span class="platform-badge">Open Source</span>
+                </div>
+                <div class="install-body">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-command">curl -fsSL https://getajob.hackeroos.com.au/openclaw/install.sh | bash</span>
+                            </div>
+                            <p class="terminal-comment"># Installs to ~/get-a-job-openclaw/</p>
+                        </div>
+                    </div>
+                    <button class="copy-btn" onclick="copyCmd(this, 'curl -fsSL https://getajob.hackeroos.com.au/openclaw/install.sh | bash')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        Copy command
+                    </button>
+
+                    <ul class="steps-list">
+                        <li>
+                            <span class="step-num">1</span>
+                            <span class="step-text">Run the curl command above. Downloads to <code>~/get-a-job-openclaw/</code></span>
+                        </li>
+                        <li>
+                            <span class="step-num">2</span>
+                            <span class="step-text">Run <code>openclaw gateway restart</code> to load the skill</span>
+                        </li>
+                        <li>
+                            <span class="step-num">3</span>
+                            <span class="step-text">Message your agent: <code>Set up my job search</code></span>
+                        </li>
+                    </ul>
+
+                    <a href="openclaw/get-a-job-openclaw.zip" class="download-link" download>
+                        ↓ Download ZIP instead
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Built by <a href="https://hackeroos.com.au">Hackeroos</a> 🦘</p>
+        </footer>
+    </div>
+
+    <script>
+        function copyCmd(btn, cmd) {
+            navigator.clipboard.writeText(cmd).then(() => {
+                const orig = btn.innerHTML;
+                btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.innerHTML = orig;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
