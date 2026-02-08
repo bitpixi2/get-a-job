@@ -29,12 +29,18 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+        }
+
         body {
             font-family: 'JetBrains Mono', monospace;
             background: radial-gradient(900px 360px at 50% -120px, rgba(255, 255, 255, 0.14), transparent 70%), var(--bg-dark);
             color: var(--text-main);
             min-height: 100vh;
             line-height: 1.5;
+            overscroll-behavior-y: none;
+            overflow-x: hidden;
         }
 
         .container {
@@ -197,6 +203,21 @@
 
             .nav-links a {
                 font-size: 0.76rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.25rem 1.1rem 1.2rem;
+            }
+
+            footer {
+                margin-top: 1.6rem;
+                padding: 1.2rem 0 0.4rem;
+            }
+
+            footer p {
+                line-height: 1.6;
             }
         }
     </style>
