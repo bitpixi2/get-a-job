@@ -220,16 +220,16 @@
         }
 
         .feedback-form button {
-            align-self: flex-start;
-            padding: 0.5rem 0.9rem;
+            align-self: flex-end;
+            padding: 0.35rem 0.7rem;
             border-radius: 6px;
             border: 1px solid var(--brand);
             background: transparent;
             color: var(--brand);
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.78rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+            font-size: 0.68rem;
+            letter-spacing: 0.05em;
+            text-transform: none;
             cursor: pointer;
             transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
         }
@@ -389,7 +389,6 @@
 
                 <div class="card wide">
                     <h2>Feedback</h2>
-                    <p>Tell me if GetAJob is working for you or not working yet. I read every message.</p>
                     <form class="feedback-form" action="https://formspree.io/f/mkovnelo" method="POST">
                         <input type="email" name="email" placeholder="Your email" required>
                         <textarea name="message" placeholder="What’s working or not working?" required></textarea>
