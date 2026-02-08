@@ -143,18 +143,10 @@
             margin-top: 1.8rem;
             display: grid;
             gap: 1.2rem;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
-        .content .card.pair {
-            grid-column: 1 / -1;
-        }
-
-        .content .card.dual {
-            grid-column: auto;
-        }
-
-        @media (max-width: 1024px) {
+        @media (max-width: 900px) {
             .content {
                 grid-template-columns: 1fr;
             }
@@ -319,44 +311,26 @@
         </header>
 
         <main>
-            <p class="lede"><strong>How It Works:</strong> GetAJob helps to speed up your job search, build your dream companies list, hunt for existing listings in your preferences, and drafts your outreach.</p>
+            <p class="lede"><strong>How it works:</strong> GetAJob does all the heavy lifting, then you do the final shipping.</p>
 
             <section class="content">
-                <div class="card dual">
-                    <h2>OpenClaw Install Layout</h2>
-                    <p>OpenClaw installs the skill and links it into your OpenClaw skills folder.</p>
-                    <div class="tree">~/getajob-openclaw/
-└── SKILL.md
-
-~/clawd/skills/getajob -> ~/getajob-openclaw</div>
+                <div class="card">
+                    <h2>Step 1</h2>
+                    <p>Say <code>Set up my job search</code> to get started. The assistant will ask you to upload your resume, then ask about your target roles, industries, locations (remote/hybrid/in-person with radius rules), and salary minimums.</p>
                 </div>
 
-                <div class="card dual">
-                    <h2>Claude Install Layout</h2>
-                    <p>The Claude installer creates a dedicated folder with scripts and references.</p>
-                    <div class="tree">~/getajob-claude/
-├── SKILL.md
-├── scripts/
-│   ├── init_workspace.py
-│   ├── add_listing.py
-│   └── update_dream_company.py
-└── references/
-    ├── search-strategies.md
-    ├── csv-schemas.md
-    ├── application-materials.md
-    └── summary-templates.md</div>
+                <div class="card">
+                    <h2>Step 2</h2>
+                    <p>A GetAJob folder appears on your desktop (OpenClaw/Claude Code) or in your browser (Claude.ai), holding your search config, job tracker, dream companies list, and folders for each company's cover letter. Say <code>run a scan</code> or <code>find me jobs</code> to fire off 5–10 queries in one go. Say <code>add [company] to my dream list</code> even if they don't list openings, that could be in your favor.</p>
                 </div>
 
-                <div class="card pair">
-                    <h2>What Happens Next</h2>
-                    <p>
-                        Once installed, restart the OpenClaw gateway, or open a new Claude Code terminal or Claude.ai chat window.
-                        The assistant can then read the local files, run the helper scripts, and keep your
-                        job search organized.
-                    </p>
-                    <p class="note">Tip: You can inspect all files before running the install command. It's <a href="https://github.com/bitpixi2/get-a-job" target="_blank" rel="noopener">open source</a>.</p>
+                <div class="card">
+                    <h2>Step 3 — What's Next?</h2>
+                    <p>Ask for a <code>daily summary</code> or <code>weekly recap</code>, optionally drafted as LinkedIn and X posts so you can #buildinpublic. Say <code>let's apply to [company]</code> and your assistant generates a re-tailored resume, cover letter, and follow-up email, all saved in a folder per company. Update anything as you go.</p>
                 </div>
             </section>
+
+            <p class="note">Tip: You can inspect all files before running the install command. It's <a href="https://github.com/bitpixi2/get-a-job" target="_blank" rel="noopener">open source</a>. Version 2 will introduce automation for filling out online job application forms, so your assistant can handle even more of the busywork while you focus on the opportunities that matter.</p>
         </main>
 
         <footer>

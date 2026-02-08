@@ -411,6 +411,35 @@
             transform: translateY(-2px);
         }
 
+        .zip-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin: 0.2rem auto 2rem;
+        }
+
+        .zip-row a {
+            color: var(--brand);
+            text-decoration: none;
+            transition: color 0.18s ease, transform 0.18s ease;
+            display: inline-block;
+        }
+
+        .zip-row a:hover {
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .zip-sep {
+            color: var(--text-faint);
+            font-size: 0.8rem;
+            line-height: 1;
+        }
+
         footer {
             text-align: center;
             padding: 2rem 0 0.5rem;
@@ -553,9 +582,6 @@
                         </li>
                     </ul>
 
-                    <a href="openclaw/getajob-openclaw.zip" class="download-link" download>
-                        ↓ Download ZIP instead
-                    </a>
                 </div>
             </div>
 
@@ -602,9 +628,6 @@
                         </li>
                     </ul>
 
-                    <a href="claude/getajob-claude.zip" class="download-link" download>
-                        ↓ Download ZIP instead
-                    </a>
                 </div>
             </div>
 
@@ -633,12 +656,16 @@
                         </li>
                     </ul>
 
-                    <a href="claude/getajob-claude.zip" class="download-link" download>
-                        ↓ Download ZIP instead
-                    </a>
                 </div>
             </div>
         </section>
+
+        <div class="zip-row">
+            <span>Download ZIP instead:</span>
+            <a href="openclaw/getajob-openclaw.zip" download>OpenClaw</a>
+            <span class="zip-sep" aria-hidden="true">·</span>
+            <a href="claude/getajob-claude.zip" download>Claude</a>
+        </div>
 
         <footer>
             <p>
