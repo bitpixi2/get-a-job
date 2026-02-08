@@ -190,6 +190,7 @@
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.1rem;
             margin: 1.6rem 0 2rem;
+            align-items: stretch;
         }
 
         .install-intro {
@@ -205,6 +206,7 @@
             align-items: center;
             gap: 0.45rem;
             width: 100%;
+            height: 100%;
         }
 
         .difficulty-tag {
@@ -230,6 +232,9 @@
             transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
             will-change: transform;
             width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .install-card.claude {
@@ -287,6 +292,9 @@
 
         .install-body {
             padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .terminal {
@@ -348,18 +356,20 @@
             justify-content: center;
             gap: 0.5rem;
             width: 100%;
-            padding: 0.7rem;
+            padding: 0.8rem;
             background: transparent;
             border: 1px solid var(--border-color);
-            color: var(--text-main);
+            color: var(--text-muted);
             font-family: inherit;
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-size: 0.8rem;
+            font-weight: 400;
             cursor: pointer;
             border-radius: 6px;
             transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
             will-change: transform;
             margin-bottom: 1rem;
+            text-transform: none;
+            letter-spacing: 0;
         }
 
         .copy-btn:hover {
@@ -478,6 +488,14 @@
             color: var(--text-faint);
             font-size: 0.8rem;
             line-height: 1;
+        }
+
+        .zip-row a.openclaw-link {
+            color: var(--openclaw);
+        }
+
+        .zip-row a.claude-link {
+            color: var(--claude);
         }
 
         .zip-note {
@@ -599,7 +617,7 @@
 
         <section class="install-section" id="install">
             <div class="install-wrap">
-                <div class="difficulty-tag hard">HARD</div>
+                <div class="difficulty-tag hard">DIFFICULT</div>
                 <div class="install-card openclaw">
                 <div class="install-header">
                     <img class="install-logo" src="assets/openclaw-logo.png" alt="OpenClaw">
@@ -704,7 +722,7 @@
                 </div>
                 <div class="install-body">
                     <a class="download-link" href="claude/skill/SKILL.md" download>
-                        Download SKILL.md
+                        ↓ Download SKILL.md
                     </a>
 
                     <ul class="steps-list">
@@ -729,9 +747,9 @@
 
         <div class="zip-row">
             <span>Download ZIP instead:</span>
-            <a href="openclaw/getajob-openclaw.zip" download>OpenClaw</a>
+            <a class="openclaw-link" href="openclaw/getajob-openclaw.zip" download>OpenClaw</a>
             <span class="zip-sep" aria-hidden="true">·</span>
-            <a href="claude/getajob-claude.zip" download>Claude</a>
+            <a class="claude-link" href="claude/getajob-claude.zip" download>Claude</a>
         </div>
         <p class="zip-note">Tip: You can inspect all files before running the install command. It's <a href="https://github.com/bitpixi2/get-a-job" target="_blank" rel="noopener">open source</a>.</p>
 
