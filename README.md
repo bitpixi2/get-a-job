@@ -1,26 +1,26 @@
 # GetAJob
 
-AI-powered job search skill for Claude and OpenClaw.
+AI-assisted job search Skill for Claude and OpenClaw. GetAJob helps to speed up your job search, build your dream companies list, hunt for existing listings in your preferences, and drafts your outreach.
 
-Feel free to security audit the repo and install scripts before installing.
+Version 2 will introduce automation for online job application forms, Calendly scheduling, inbound call handling, and scheduled email and social media posting. The current release remains intentionally sandboxed for security and simplicity, focusing on momentum rather than full automation.
 
-Support the project: [Donate a coffee](https://buymeacoffee.com/hackeroos)
+Support the project: [Buy me a coffee](https://buymeacoffee.com/hackeroos)
 
 ## Project Structure
 
 ```
 getajob-site/
-├── public/                    # Deploy this folder
-│   ├── index.html            # Landing page
+├── public/
+│   ├── index.html
 │   ├── claude/
-│   │   ├── install.sh        # Claude installer script
+│   │   ├── install.sh
 │   │   ├── getajob-claude.zip
-│   │   └── skill/            # Claude skill files
+│   │   └── skill/
 │   │       ├── SKILL.md
 │   │       ├── scripts/
 │   │       └── references/
 │   └── openclaw/
-│       ├── install.sh        # OpenClaw installer script
+│       ├── install.sh
 │       ├── getajob-openclaw.zip
 │       └── skill/
 │           └── SKILL.md
