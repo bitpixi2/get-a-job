@@ -12,10 +12,10 @@
             --bg-dark: #151c18;
             --bg-card: #0f1411;
             --bg-elevated: #131a15;
-            --brand: #3E2BD5;
+            --brand: #ffffff;
             --claude: #C15F3C;
             --openclaw: #E81C25;
-            --accent-soft: rgba(62, 43, 213, 0.12);
+            --accent-soft: rgba(255, 255, 255, 0.12);
             --text-main: #e8f2ec;
             --text-muted: #8ea29a;
             --text-faint: #5f6d66;
@@ -30,7 +30,7 @@
 
         body {
             font-family: 'JetBrains Mono', monospace;
-            background: radial-gradient(900px 360px at 50% -120px, rgba(62, 43, 213, 0.14), transparent 70%), var(--bg-dark);
+            background: radial-gradient(900px 360px at 50% -120px, rgba(255, 255, 255, 0.14), transparent 70%), var(--bg-dark);
             color: var(--text-main);
             min-height: 100vh;
             line-height: 1.5;
@@ -64,7 +64,7 @@
 
         .logo {
             font-weight: 600;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             color: var(--brand);
             letter-spacing: 0.04em;
         }
@@ -193,9 +193,11 @@
             border-bottom: 1px solid var(--border-color);
             background: #ffffff;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: space-between;
+            gap: 0.75rem;
+            flex-wrap: wrap;
         }
 
         .install-logo {
@@ -489,7 +491,7 @@
             <div class="install-card openclaw">
                 <div class="install-header">
                     <img class="install-logo" src="assets/openclaw-logo.png" alt="OpenClaw">
-                    <span class="platform-badge">Open Source</span>
+                    <span class="platform-badge">OpenSource</span>
                 </div>
                 <div class="install-body">
                     <div class="terminal">
@@ -535,11 +537,6 @@
                 </div>
             </div>
         </section>
-
-        <div class="donate">
-            <span>Did you get a job?</span>
-            <a class="donate-btn" href="https://buymeacoffee.com/hackeroos">Donate a coffee</a>
-        </div>
 
         <footer>
             <p>
