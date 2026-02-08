@@ -145,6 +145,20 @@
             gap: 1.2rem;
         }
 
+        .content .card.pair {
+            grid-column: span 2;
+        }
+
+        .content .card.dual {
+            grid-column: span 1;
+        }
+
+        @media (min-width: 900px) {
+            .content {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -302,7 +316,16 @@
             </div>
 
             <section class="content">
-                <div class="card">
+                <div class="card dual">
+                    <h2>OpenClaw Install Layout</h2>
+                    <p>OpenClaw installs the skill and links it into your OpenClaw skills folder.</p>
+                    <div class="tree">~/getajob-openclaw/
+└── SKILL.md
+
+~/clawd/skills/getajob -> ~/getajob-openclaw</div>
+                </div>
+
+                <div class="card dual">
                     <h2>Claude Install Layout</h2>
                     <p>The Claude installer creates a dedicated folder with scripts and references.</p>
                     <div class="tree">~/getajob-claude/
@@ -318,16 +341,7 @@
     └── summary-templates.md</div>
                 </div>
 
-                <div class="card">
-                    <h2>OpenClaw Install Layout</h2>
-                    <p>OpenClaw installs the skill and links it into your OpenClaw skills folder.</p>
-                    <div class="tree">~/getajob-openclaw/
-└── SKILL.md
-
-~/clawd/skills/getajob -> ~/getajob-openclaw</div>
-                </div>
-
-                <div class="card">
+                <div class="card pair">
                     <h2>What Happens Next</h2>
                     <p>
                         Once installed, you load the skill in Claude or restart the OpenClaw gateway.
