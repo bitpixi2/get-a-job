@@ -138,6 +138,24 @@
             font-size: 0.72rem;
         }
 
+        .footer-donate {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-donate .donate-btn {
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            border: 1px solid var(--brand);
+            color: var(--brand);
+            text-decoration: none;
+            font-size: 0.68rem;
+            letter-spacing: 0.05em;
+            text-transform: none;
+        }
+
         footer {
             text-align: center;
             padding: 2rem 0 0.5rem;
@@ -168,16 +186,17 @@
             <div class="logo">GetAJob</div>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="https://github.com/bitpixi2/get-a-job">GitHub</a>
+                <a href="https://github.com/bitpixi2/get-a-job" target="_blank" rel="noopener">GitHub</a>
             </nav>
         </header>
 
         <main>
             <h1 class="page-title">How It Works</h1>
             <p class="lede">
-                GetAJob installs a local skill bundle for Claude or OpenClaw. The installer downloads
-                the skill definition, scripts, and reference files from <strong>getajob.bitpixi.com</strong>
-                and places them into your home folder so the assistant can read and run them locally.
+                GetAJob helps to speed up your job search, build your dream companies list, hunt for
+                existing listings in your preferences, stay on top of deadlines, drafts custom cover
+                letters, resume tweaks, follow-ups, and summaries that you can post to LinkedIn or X
+                to #buildinpublic. It helps you out of the dreaded \"analysis paralysis\".
             </p>
 
             <section class="content">
@@ -219,7 +238,14 @@
         </main>
 
         <footer>
-            <p>Built by <a href="https://x.com/bitpixi">@bitpixi</a>, Founder of <a href="https://hackeroos.com.au">Hackeroos</a></p>
+            <p>
+                Built by <a href="https://x.com/bitpixi">@bitpixi</a>, Founder of <a href="https://hackeroos.com.au">Hackeroos</a>
+                <span aria-hidden="true"> | </span>
+                <span class="footer-donate">
+                    <span>Did you get a job?</span>
+                    <a class="donate-btn" href="https://buymeacoffee.com/hackeroos">Donate a coffee</a>
+                </span>
+            </p>
         </footer>
     </div>
 </body>
