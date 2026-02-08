@@ -423,7 +423,7 @@
         @media (max-width: 900px) {
             header {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
                 gap: 0.6rem;
             }
 
@@ -431,6 +431,13 @@
                 display: flex;
                 flex-wrap: nowrap;
                 gap: 0.4rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-links a,
+            .nav-sep {
+                font-size: 0.76rem;
             }
         }
 
@@ -580,7 +587,7 @@
                 <span aria-hidden="true"> | </span>
                 <span class="footer-donate">
                     <span>Did you get a job?</span>
-                    <a class="donate-btn" href="https://buymeacoffee.com/hackeroos">Donate a coffee</a>
+                    <a class="donate-btn" href="https://buymeacoffee.com/hackeroos">Buy me a coffee</a>
                 </span>
             </p>
         </footer>
