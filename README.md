@@ -35,6 +35,8 @@ Claude:
 curl -fsSL https://getajob.bitpixi.com/claude/install.sh | bash
 ```
 
-Version 2 will introduce automation for online job application forms.
+## What's Next?
+
+Version 2 will introduce improvements, and automation for filling out online job application forms.
 
 Support the project: [Buy me a coffee](https://buymeacoffee.com/hackeroos)
