@@ -12,7 +12,7 @@ NC='\033[0m'
 
 echo ""
 echo -e "${ORANGE}╔═══════════════════════════════════════════╗${NC}"
-echo -e "${ORANGE}║${NC}     🦘 ${CYAN}GetAJob${NC} — Claude AI Skill          ${ORANGE}║${NC}"
+echo -e "${ORANGE}║${NC}       ${CYAN}GetAJob${NC} — Claude AI Skill          ${ORANGE}║${NC}"
 echo -e "${ORANGE}╚═══════════════════════════════════════════╝${NC}"
 echo ""
 

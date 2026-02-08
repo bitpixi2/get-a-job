@@ -4,7 +4,7 @@ AI-powered job search skill for Claude and OpenClaw.
 
 Feel free to security audit the repo and install scripts before installing.
 
-Support the project: [Donate a coffee](https://buymeacoffee.com/bitpixi)
+Support the project: [Donate a coffee](https://buymeacoffee.com/hackeroos)
 
 ## Project Structure
 
