@@ -440,6 +440,25 @@
             line-height: 1;
         }
 
+        .zip-note {
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 0.72rem;
+            margin: -1.2rem auto 2rem;
+        }
+
+        .zip-note a {
+            color: var(--brand);
+            text-decoration: none;
+            transition: color 0.18s ease, transform 0.18s ease;
+            display: inline-block;
+        }
+
+        .zip-note a:hover {
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
         footer {
             text-align: center;
             padding: 2rem 0 0.5rem;
@@ -666,6 +685,7 @@
             <span class="zip-sep" aria-hidden="true">·</span>
             <a href="claude/getajob-claude.zip" download>Claude</a>
         </div>
+        <p class="zip-note">Tip: You can inspect all files before running the install command. It's <a href="https://github.com/bitpixi2/get-a-job" target="_blank" rel="noopener">open source</a>.</p>
 
         <footer>
             <p>
