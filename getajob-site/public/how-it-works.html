@@ -184,7 +184,60 @@
             padding: 0.1rem 0.35rem;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.74rem;
+            color: var(--claude);
+        }
+
+        .card code.code-openclaw {
             color: var(--openclaw);
+        }
+
+        .card.wide {
+            grid-column: 1 / -1;
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 0.8rem;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.6rem 0.75rem;
+            color: var(--text-main);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+        }
+
+        .feedback-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .feedback-form button {
+            align-self: flex-start;
+            padding: 0.5rem 0.9rem;
+            border-radius: 6px;
+            border: 1px solid var(--brand);
+            background: transparent;
+            color: var(--brand);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+        }
+
+        .feedback-form button:hover {
+            background: var(--brand);
+            color: var(--bg-dark);
+            transform: translateY(-1px);
         }
 
         .tree {
@@ -326,12 +379,22 @@
 
                 <div class="card">
                     <h2>Step 2</h2>
-                    <p>A <code>GetAJob folder</code> appears on your desktop or browser, holding your search config, job tracker, dream companies list, and folders for each company's cover letter.<br><br>Say <code>run a scan</code> or <code>find me jobs</code> to get 5–10 roles added to your spreadsheet. Say <code>add [company] to my dream list</code> even if they don't list openings.</p>
+                    <p>A <code class="code-openclaw">GetAJob folder</code> appears on your desktop or browser, holding your search config, job tracker, dream companies list, and folders for each company's cover letter.<br><br>Say <code>run a scan</code> or <code>find me jobs</code> to get 5–10 roles added to your spreadsheet. Say <code>add [company] to my dream list</code> even if they don't list openings.</p>
                 </div>
 
                 <div class="card">
                     <h2>Step 3</h2>
                     <p>Ask for a <code>daily summary</code> or <code>weekly recap</code>, optionally drafted as LinkedIn and X posts so you can #buildinpublic.<br><br>Say <code>let's apply to [company]</code> and your assistant generates a re-tailored resume, cover letter, and follow-up email, all saved in a folder per company.</p>
+                </div>
+
+                <div class="card wide">
+                    <h2>Feedback</h2>
+                    <p>Tell me if GetAJob is working for you or not working yet. I read every message.</p>
+                    <form class="feedback-form" action="https://formspree.io/f/mkovnelo" method="POST">
+                        <input type="email" name="email" placeholder="Your email" required>
+                        <textarea name="message" placeholder="What’s working or not working?" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
                 </div>
             </section>
         </main>
