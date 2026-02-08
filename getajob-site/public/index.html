@@ -78,6 +78,18 @@
             letter-spacing: 0.04em;
         }
 
+        .logo-link {
+            text-decoration: none;
+            color: var(--brand);
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.18s ease, transform 0.18s ease;
+        }
+
+        .logo-link:hover {
+            transform: translateY(-1px);
+        }
+
         .tagline {
             display: inline-block;
             padding: 0.25rem 0.6rem;
@@ -436,6 +448,10 @@
                 gap: 0.6rem;
             }
 
+            .logo-link {
+                pointer-events: none;
+            }
+
             .nav-links {
                 display: flex;
                 flex-wrap: nowrap;
@@ -481,7 +497,7 @@
     <div class="container">
         <header>
             <div class="brand">
-                <div class="logo">GetAJob</div>
+                <a class="logo logo-link" href="index.html">GetAJob</a>
                 <div class="tagline">agentic skill for job seekers</div>
             </div>
             <nav class="nav-links">
