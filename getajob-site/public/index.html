@@ -199,19 +199,24 @@
             text-align: center;
         }
 
-        .difficulty-row {
-            display: flex;
-            justify-content: center;
-            gap: 0.6rem;
-            margin: -0.4rem 0 1.2rem;
-            font-size: 0.7rem;
-            letter-spacing: 0.18em;
+        .difficulty-tag {
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.15rem 0.6rem;
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            background: var(--bg-dark);
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
+            z-index: 2;
         }
 
-        .difficulty-row .hard { color: #e11d48; }
-        .difficulty-row .medium { color: #f97316; }
-        .difficulty-row .easy { color: #22c55e; }
+        .difficulty-tag.hard { color: #e11d48; }
+        .difficulty-tag.medium { color: #f97316; }
+        .difficulty-tag.easy { color: #22c55e; }
 
         .install-card {
             --card-accent: var(--brand);
@@ -219,6 +224,7 @@
             border: 1px solid var(--border-color);
             border-radius: 8px;
             overflow: hidden;
+            position: relative;
             transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
             will-change: transform;
         }
@@ -270,11 +276,6 @@
             justify-content: center;
         }
 
-        .install-card.openclaw .platform-badge {
-            margin-left: 0;
-            width: 100%;
-            text-align: center;
-        }
 
         .install-logo.claude-logo {
             max-width: 150px;
@@ -580,17 +581,12 @@
         </header>
 
         <p class="install-intro">Choose a preferred setup:</p>
-        <div class="difficulty-row">
-            <span class="hard">Hard</span>
-            <span class="medium">Medium</span>
-            <span class="easy">Easy</span>
-        </div>
 
         <section class="install-section" id="install">
             <div class="install-card openclaw">
+                <div class="difficulty-tag hard">Hard</div>
                 <div class="install-header">
                     <img class="install-logo" src="assets/openclaw-logo.png" alt="OpenClaw">
-                    <span class="platform-badge">OpenClaw</span>
                 </div>
                 <div class="install-body">
                     <div class="terminal">
@@ -634,6 +630,7 @@
             </div>
 
             <div class="install-card claude">
+                <div class="difficulty-tag medium">Medium</div>
                 <div class="install-header">
                     <img class="install-logo claude-logo" src="assets/claude-logo.png" alt="Claude">
                     <span class="platform-badge">Terminal</span>
@@ -680,6 +677,7 @@
             </div>
 
             <div class="install-card claude">
+                <div class="difficulty-tag easy">Easy</div>
                 <div class="install-header">
                     <img class="install-logo claude-logo" src="assets/claude-logo.png" alt="Claude">
                     <span class="platform-badge">Website</span>
