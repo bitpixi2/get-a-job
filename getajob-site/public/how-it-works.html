@@ -114,18 +114,29 @@
             transform: translateY(-1px);
         }
 
-        .page-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            color: var(--brand);
-            margin-bottom: 0.65rem;
-        }
-
         .lede {
             color: var(--text-muted);
             font-size: 0.82rem;
-            max-width: 720px;
+            max-width: 760px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .lede strong {
+            color: var(--brand);
+        }
+
+        .lede-logo {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0 0.8rem;
+        }
+
+        .lede-logo img {
+            max-width: 360px;
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .content {
@@ -285,11 +296,10 @@
         </header>
 
         <main>
-            <h1 class="page-title">How It Works</h1>
-            <p class="lede">
-                GetAJob helps to speed up your job search, build your dream companies list, hunt for
-                existing listings in your preferences, and drafts your outreach!
-            </p>
+            <p class="lede"><strong>How It Works:</strong> GetAJob helps to speed up your job search, build your dream companies list, hunt for existing listings in your preferences, and drafts your outreach. Get unstuck!</p>
+            <div class="lede-logo">
+                <img src="assets/getajob-logo.png" alt="GetAJob mascot holding a folder">
+            </div>
 
             <section class="content">
                 <div class="card">
