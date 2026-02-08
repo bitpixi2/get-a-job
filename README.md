@@ -4,7 +4,7 @@ AI-powered job search skill for Claude and OpenClaw.
 
 Feel free to security audit the repo and install scripts before installing.
 
-Support the project: [Donate a coffee](https://buymeacoffee.com/hackeroos)
+Support the project: [Donate a coffee](https://buymeacoffee.com/bitpixi)
 
 ## Project Structure
 
@@ -31,10 +31,10 @@ getajob-site/
 
 Claude:
 ```bash
-curl -fsSL https://getajob.hackeroos.com.au/claude/install.sh | bash
+curl -fsSL https://getajob.bitpixi.com/claude/install.sh | bash
 ```
 
 OpenClaw:
 ```bash
-curl -fsSL https://getajob.hackeroos.com.au/openclaw/install.sh | bash
+curl -fsSL https://getajob.bitpixi.com/openclaw/install.sh | bash
 ```

@@ -5,9 +5,9 @@ license: MIT
 metadata:
   openclaw:
     emoji: "💼"
-    author: "Hackeroos"
+    author: "bitpixi"
     version: "1.0.0"
-    homepage: "https://getajob.hackeroos.com.au"
+    homepage: "https://getajob.bitpixi.com"
     requires:
       bins: []
     tags:

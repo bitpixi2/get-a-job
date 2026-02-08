@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # GetAJob Skill Installer (Claude.ai)
-# https://getajob.hackeroos.com.au
+# https://getajob.bitpixi.com
 
 set -e
 
@@ -23,7 +23,7 @@ echo -e "${ORANGE}→${NC} Installing to ${INSTALL_DIR}..."
 mkdir -p "$INSTALL_DIR/scripts"
 mkdir -p "$INSTALL_DIR/references"
 
-BASE_URL="https://getajob.hackeroos.com.au/claude/skill"
+BASE_URL="https://getajob.bitpixi.com/claude/skill"
 
 echo -e "${ORANGE}→${NC} Downloading skill files..."
 

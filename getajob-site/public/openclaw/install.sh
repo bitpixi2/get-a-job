@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # GetAJob Skill Installer (OpenClaw)
-# https://getajob.hackeroos.com.au
+# https://getajob.bitpixi.com
 
 set -e
 
@@ -26,7 +26,7 @@ echo -e "${ORANGE}→${NC} Linking to ${SKILL_DIR}..."
 mkdir -p "$INSTALL_DIR"
 mkdir -p "$HOME/clawd/skills"
 
-BASE_URL="https://getajob.hackeroos.com.au/openclaw/skill"
+BASE_URL="https://getajob.bitpixi.com/openclaw/skill"
 
 echo -e "${ORANGE}→${NC} Downloading skill files..."
 
