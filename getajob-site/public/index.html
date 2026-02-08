@@ -12,10 +12,10 @@
             --bg-dark: #151c18;
             --bg-card: #0f1411;
             --bg-elevated: #131a15;
-            --brand: #1E90FF;
+            --brand: #3E2BD5;
             --claude: #C15F3C;
             --openclaw: #E81C25;
-            --accent-soft: rgba(30, 144, 255, 0.12);
+            --accent-soft: rgba(62, 43, 213, 0.12);
             --text-main: #e8f2ec;
             --text-muted: #8ea29a;
             --text-faint: #5f6d66;
@@ -30,7 +30,7 @@
 
         body {
             font-family: 'JetBrains Mono', monospace;
-            background: radial-gradient(900px 360px at 50% -120px, rgba(30, 144, 255, 0.14), transparent 70%), var(--bg-dark);
+            background: radial-gradient(900px 360px at 50% -120px, rgba(62, 43, 213, 0.14), transparent 70%), var(--bg-dark);
             color: var(--text-main);
             min-height: 100vh;
             line-height: 1.5;
@@ -64,7 +64,7 @@
 
         .logo {
             font-weight: 600;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: var(--brand);
             letter-spacing: 0.04em;
         }
@@ -167,21 +167,6 @@
             --card-accent: var(--openclaw);
         }
 
-        .module-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem 1.25rem 0.25rem;
-        }
-
-        .module-logo img {
-            max-width: 170px;
-            max-height: 52px;
-            width: auto;
-            height: auto;
-            display: block;
-        }
-
         .install-card:hover {
             border-color: var(--card-accent);
             transform: translateY(-3px);
@@ -191,22 +176,26 @@
         .install-header {
             padding: 1rem 1.25rem;
             border-bottom: 1px solid var(--border-color);
+            background: #ffffff;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
-        .install-header h2 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--card-accent);
+        .install-logo {
+            max-width: 170px;
+            max-height: 52px;
+            width: auto;
+            height: auto;
+            display: block;
         }
 
         .install-header .platform-badge {
             padding: 0.2rem 0.6rem;
-            border: 1px solid var(--border-color);
-            font-size: 0.62rem;
-            color: var(--text-faint);
+            border: 1px solid #e0e0e0;
+            font-size: 0.6rem;
+            color: #3a3a3a;
             text-transform: uppercase;
             letter-spacing: 0.12em;
         }
@@ -434,11 +423,8 @@
 
         <section class="install-section" id="install">
             <div class="install-card claude">
-                <div class="module-logo">
-                    <img src="assets/claude-logo.png" alt="Claude logo">
-                </div>
                 <div class="install-header">
-                    <h2>Claude</h2>
+                    <img class="install-logo" src="assets/claude-logo.png" alt="Claude">
                     <span class="platform-badge">Anthropic</span>
                 </div>
                 <div class="install-body">
@@ -486,11 +472,8 @@
             </div>
 
             <div class="install-card openclaw">
-                <div class="module-logo">
-                    <img src="assets/openclaw-logo.png" alt="OpenClaw logo">
-                </div>
                 <div class="install-header">
-                    <h2>OpenClaw</h2>
+                    <img class="install-logo" src="assets/openclaw-logo.png" alt="OpenClaw">
                     <span class="platform-badge">Open Source</span>
                 </div>
                 <div class="install-body">
