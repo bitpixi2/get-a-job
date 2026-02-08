@@ -82,19 +82,26 @@
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 0.6rem;
         }
 
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.68rem;
+            font-size: 0.62rem;
             text-transform: uppercase;
             letter-spacing: 0.18em;
             display: inline-flex;
             align-items: center;
             transition: color 0.18s ease, transform 0.18s ease;
             will-change: transform;
+        }
+
+        .nav-sep {
+            color: var(--text-faint);
+            font-size: 0.62rem;
+            letter-spacing: 0.18em;
+            line-height: 1;
         }
 
         .nav-links a:hover {
@@ -422,8 +429,8 @@
 
             .nav-links {
                 display: flex;
-                flex-wrap: wrap;
-                gap: 0.8rem;
+                flex-wrap: nowrap;
+                gap: 0.4rem;
             }
         }
 
@@ -458,7 +465,9 @@
             </div>
             <nav class="nav-links">
                 <a href="how-it-works.html">How it works</a>
+                <span class="nav-sep" aria-hidden="true">·</span>
                 <a href="https://github.com/bitpixi2/get-a-job" target="_blank" rel="noopener">GitHub</a>
+                <span class="nav-sep" aria-hidden="true">·</span>
                 <a href="mailto:kasey.bitpixi@gmail.com">Contact</a>
             </nav>
         </header>
