@@ -143,19 +143,25 @@
             margin-top: 1.8rem;
             display: grid;
             gap: 1.2rem;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
         .content .card.pair {
-            grid-column: span 2;
+            grid-column: 1 / -1;
         }
 
         .content .card.dual {
-            grid-column: span 1;
+            grid-column: auto;
         }
 
-        @media (min-width: 900px) {
+        @media (max-width: 1024px) {
             .content {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-columns: 1fr;
+            }
+
+            .tree {
+                white-space: pre-wrap;
+                word-break: break-word;
             }
         }
 
@@ -281,11 +287,6 @@
         @media (max-width: 600px) {
             .container {
                 padding: 1.25rem 1.1rem 1.2rem;
-            }
-
-            .tree {
-                white-space: pre-wrap;
-                word-break: break-word;
             }
 
             footer {
