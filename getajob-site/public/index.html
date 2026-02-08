@@ -199,6 +199,20 @@
             text-align: center;
         }
 
+        .difficulty-row {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            margin: -0.4rem 0 1.2rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .difficulty-row .hard { color: #e11d48; }
+        .difficulty-row .medium { color: #f97316; }
+        .difficulty-row .easy { color: #22c55e; }
+
         .install-card {
             --card-accent: var(--brand);
             background: var(--bg-card);
@@ -250,6 +264,16 @@
             text-transform: uppercase;
             letter-spacing: 0.12em;
             margin-left: auto;
+        }
+
+        .install-card.openclaw .install-header {
+            justify-content: center;
+        }
+
+        .install-card.openclaw .platform-badge {
+            margin-left: 0;
+            width: 100%;
+            text-align: center;
         }
 
         .install-logo.claude-logo {
@@ -556,12 +580,17 @@
         </header>
 
         <p class="install-intro">Choose a preferred setup:</p>
+        <div class="difficulty-row">
+            <span class="hard">Hard</span>
+            <span class="medium">Medium</span>
+            <span class="easy">Easy</span>
+        </div>
 
         <section class="install-section" id="install">
             <div class="install-card openclaw">
                 <div class="install-header">
                     <img class="install-logo" src="assets/openclaw-logo.png" alt="OpenClaw">
-                    <span class="platform-badge">OpenSource</span>
+                    <span class="platform-badge">OpenClaw</span>
                 </div>
                 <div class="install-body">
                     <div class="terminal">
@@ -607,7 +636,7 @@
             <div class="install-card claude">
                 <div class="install-header">
                     <img class="install-logo claude-logo" src="assets/claude-logo.png" alt="Claude">
-                    <span class="platform-badge">Anthropic</span>
+                    <span class="platform-badge">Terminal</span>
                 </div>
                 <div class="install-body">
                     <div class="terminal">
@@ -653,7 +682,7 @@
             <div class="install-card claude">
                 <div class="install-header">
                     <img class="install-logo claude-logo" src="assets/claude-logo.png" alt="Claude">
-                    <span class="platform-badge">Claude.ai (Web)</span>
+                    <span class="platform-badge">Website</span>
                 </div>
                 <div class="install-body">
                     <a class="download-link" href="claude/skill/SKILL.md" download>
