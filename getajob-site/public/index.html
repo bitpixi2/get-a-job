@@ -30,6 +30,8 @@
 
         html, body {
             height: 100%;
+            overscroll-behavior: none;
+            overflow-x: hidden;
         }
 
         body {
@@ -37,9 +39,10 @@
             background: radial-gradient(900px 360px at 50% -120px, rgba(255, 255, 255, 0.14), transparent 70%), var(--bg-dark);
             color: var(--text-main);
             min-height: 100vh;
+            min-height: 100svh;
+            min-height: 100dvh;
             line-height: 1.5;
             overscroll-behavior-y: none;
-            overflow-x: hidden;
         }
 
         ::selection {
