@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works — GetAJob</title>
+    <meta name="description" content="How GetAJob installs the Claude and OpenClaw skill files, scripts, and references on your machine." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #151c18;
+            --bg-card: #0f1411;
+            --bg-elevated: #131a15;
+            --brand: #f97316;
+            --claude: #C15F3C;
+            --openclaw: #FF5A2D;
+            --accent-soft: rgba(249, 115, 22, 0.12);
+            --text-main: #e8f2ec;
+            --text-muted: #8ea29a;
+            --text-faint: #5f6d66;
+            --border-color: #1f2a23;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: radial-gradient(900px 360px at 50% -120px, rgba(249, 115, 22, 0.14), transparent 70%), var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 3rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 1.75rem;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--brand);
+            letter-spacing: 0.04em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.18s ease, transform 0.18s ease;
+            will-change: transform;
+        }
+
+        .nav-links a:hover {
+            color: var(--brand);
+            transform: translateY(-1px);
+        }
+
+        .page-title {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: var(--brand);
+            margin-bottom: 0.75rem;
+        }
+
+        .lede {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            max-width: 720px;
+        }
+
+        .content {
+            margin-top: 1.8rem;
+            display: grid;
+            gap: 1.2rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.2rem;
+        }
+
+        .card h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.6rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .tree {
+            margin-top: 0.8rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.9rem 1rem;
+            font-size: 0.78rem;
+            color: var(--text-main);
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        .note {
+            margin-top: 1rem;
+            color: var(--text-faint);
+            font-size: 0.75rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0 0.5rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 2.5rem;
+        }
+
+        footer p {
+            color: var(--text-faint);
+            font-size: 0.75rem;
+        }
+
+        footer a {
+            color: var(--brand);
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">GetAJob</div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="https://github.com/bitpixi2/get-a-job">GitHub</a>
+            </nav>
+        </header>
+
+        <main>
+            <h1 class="page-title">How It Works</h1>
+            <p class="lede">
+                GetAJob installs a local skill bundle for Claude or OpenClaw. The installer downloads
+                the skill definition, scripts, and reference files from <strong>getajob.bitpixi.com</strong>
+                and places them into your home folder so the assistant can read and run them locally.
+            </p>
+
+            <section class="content">
+                <div class="card">
+                    <h2>Claude Install Layout</h2>
+                    <p>The Claude installer creates a dedicated folder with scripts and references.</p>
+                    <div class="tree">~/get-a-job-claude/
+├── SKILL.md
+├── scripts/
+│   ├── init_workspace.py
+│   ├── add_listing.py
+│   └── update_dream_company.py
+└── references/
+    ├── search-strategies.md
+    ├── csv-schemas.md
+    ├── application-materials.md
+    └── summary-templates.md</div>
+                </div>
+
+                <div class="card">
+                    <h2>OpenClaw Install Layout</h2>
+                    <p>OpenClaw installs the skill and links it into your OpenClaw skills folder.</p>
+                    <div class="tree">~/get-a-job-openclaw/
+└── SKILL.md
+
+~/clawd/skills/getajob -> ~/get-a-job-openclaw</div>
+                </div>
+
+                <div class="card">
+                    <h2>What Happens Next</h2>
+                    <p>
+                        Once installed, you load the skill in Claude or restart the OpenClaw gateway.
+                        The assistant can then read the local files, run the helper scripts, and keep your
+                        job search data organized.
+                    </p>
+                    <p class="note">Tip: You can inspect all files before running the install command.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Built by <a href="https://x.com/bitpixi">@bitpixi</a>, Founder of <a href="https://hackeroos.com.au">Hackeroos</a></p>
+        </footer>
+    </div>
+</body>
+</html>
