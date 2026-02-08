@@ -168,6 +168,7 @@
             font-size: 0.82rem;
             color: var(--text-muted);
             margin: 0.6rem 0 1rem;
+            text-align: center;
         }
 
         .install-card {
@@ -201,7 +202,6 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: space-between;
             gap: 0.75rem;
             flex-wrap: wrap;
         }
@@ -221,6 +221,12 @@
             color: #3a3a3a;
             text-transform: uppercase;
             letter-spacing: 0.12em;
+            margin-left: auto;
+        }
+
+        .install-logo.claude-logo {
+            max-width: 150px;
+            max-height: 46px;
         }
 
         .install-body {
@@ -392,10 +398,13 @@
         footer a {
             color: var(--brand);
             text-decoration: none;
+            transition: color 0.18s ease, transform 0.18s ease;
+            display: inline-block;
         }
 
         footer a:hover {
-            text-decoration: underline;
+            text-decoration: none;
+            transform: translateY(-1px);
         }
 
         a:focus-visible,
@@ -405,18 +414,30 @@
         }
 
         @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.6rem;
+            }
+
             .nav-links {
-                display: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.8rem;
             }
         }
 
         @media (max-width: 600px) {
             .container {
-                padding: 1.25rem 1.1rem 2.5rem;
+                padding: 1.25rem 1.1rem 2rem;
             }
 
             .terminal-body {
                 font-size: 0.72rem;
+            }
+
+            footer p {
+                line-height: 1.6;
             }
         }
 
@@ -442,60 +463,9 @@
             </nav>
         </header>
 
-        <section class="hero"></section>
-
-        <p class="install-intro">GetAJob helps to speed up your job search! Choose a preferred setup:</p>
+        <p class="install-intro">Choose a preferred setup:</p>
 
         <section class="install-section" id="install">
-            <div class="install-card claude">
-                <div class="install-header">
-                    <img class="install-logo" src="assets/claude-logo.png" alt="Claude">
-                    <span class="platform-badge">Anthropic</span>
-                </div>
-                <div class="install-body">
-                    <div class="terminal">
-                        <div class="terminal-header">
-                            <span class="terminal-dot red"></span>
-                            <span class="terminal-dot yellow"></span>
-                            <span class="terminal-dot green"></span>
-                        </div>
-                        <div class="terminal-body">
-                            <div class="terminal-line">
-                                <span class="terminal-prompt">$</span>
-                                <span class="terminal-command">curl -fsSL https://getajob.bitpixi.com/claude/install.sh | bash</span>
-                            </div>
-                            <p class="terminal-comment"># Installs to ~/getajob-claude/</p>
-                        </div>
-                    </div>
-                    <button class="copy-btn" onclick="copyCmd(this, 'curl -fsSL https://getajob.bitpixi.com/claude/install.sh | bash')">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="9" y="9" width="13" height="13"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                        Copy command
-                    </button>
-
-                    <ul class="steps-list">
-                        <li>
-                            <span class="step-num">1</span>
-                            <span class="step-text">Run the curl command above. Downloads to <code>~/getajob-claude/</code></span>
-                        </li>
-                        <li>
-                            <span class="step-num">2</span>
-                            <span class="step-text">In Claude.ai, upload <code>SKILL.md</code> and say <code>Use this skill</code></span>
-                        </li>
-                        <li>
-                            <span class="step-num">3</span>
-                            <span class="step-text">Say <code>Set up my job search</code> to get started</span>
-                        </li>
-                    </ul>
-
-                    <a href="claude/getajob-claude.zip" class="download-link" download>
-                        ↓ Download ZIP instead
-                    </a>
-                </div>
-            </div>
-
             <div class="install-card openclaw">
                 <div class="install-header">
                     <img class="install-logo" src="assets/openclaw-logo.png" alt="OpenClaw">
@@ -540,6 +510,55 @@
                     </ul>
 
                     <a href="openclaw/getajob-openclaw.zip" class="download-link" download>
+                        ↓ Download ZIP instead
+                    </a>
+                </div>
+            </div>
+
+            <div class="install-card claude">
+                <div class="install-header">
+                    <img class="install-logo claude-logo" src="assets/claude-logo.png" alt="Claude">
+                    <span class="platform-badge">Anthropic</span>
+                </div>
+                <div class="install-body">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <span class="terminal-dot red"></span>
+                            <span class="terminal-dot yellow"></span>
+                            <span class="terminal-dot green"></span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="terminal-prompt">$</span>
+                                <span class="terminal-command">curl -fsSL https://getajob.bitpixi.com/claude/install.sh | bash</span>
+                            </div>
+                            <p class="terminal-comment"># Installs to ~/getajob-claude/</p>
+                        </div>
+                    </div>
+                    <button class="copy-btn" onclick="copyCmd(this, 'curl -fsSL https://getajob.bitpixi.com/claude/install.sh | bash')">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        Copy command
+                    </button>
+
+                    <ul class="steps-list">
+                        <li>
+                            <span class="step-num">1</span>
+                            <span class="step-text">Run the curl command above. Downloads to <code>~/getajob-claude/</code></span>
+                        </li>
+                        <li>
+                            <span class="step-num">2</span>
+                            <span class="step-text">In Claude.ai, upload <code>SKILL.md</code> and say <code>Use this skill</code></span>
+                        </li>
+                        <li>
+                            <span class="step-num">3</span>
+                            <span class="step-text">Say <code>Set up my job search</code> to get started</span>
+                        </li>
+                    </ul>
+
+                    <a href="claude/getajob-claude.zip" class="download-link" download>
                         ↓ Download ZIP instead
                     </a>
                 </div>

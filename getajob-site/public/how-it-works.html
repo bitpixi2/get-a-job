@@ -171,6 +171,13 @@
         footer a {
             color: var(--brand);
             text-decoration: none;
+            transition: color 0.18s ease, transform 0.18s ease;
+            display: inline-block;
+        }
+
+        footer a:hover {
+            text-decoration: none;
+            transform: translateY(-1px);
         }
 
         @media (max-width: 900px) {
