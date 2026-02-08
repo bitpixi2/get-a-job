@@ -166,11 +166,23 @@
             max-width: 100%;
         }
 
-        .note {
-            margin-top: 1rem;
-            color: var(--text-faint);
-            font-size: 0.72rem;
-        }
+.note {
+    margin-top: 1rem;
+    color: var(--text-faint);
+    font-size: 0.72rem;
+}
+
+.note a {
+    color: var(--brand);
+    text-decoration: none;
+    transition: color 0.18s ease, transform 0.18s ease;
+    display: inline-block;
+}
+
+.note a:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+}
 
         .footer-donate {
             display: inline-flex;
@@ -312,7 +324,7 @@
                         The assistant can then read the local files, run the helper scripts, and keep your
                         job search data organized.
                     </p>
-                    <p class="note">Tip: You can inspect all files before running the install command.</p>
+                    <p class="note">Tip: You can inspect all files before running the install command. It's <a href="https://github.com/bitpixi2/get-a-job" target="_blank" rel="noopener">open source</a>.</p>
                 </div>
             </section>
         </main>
