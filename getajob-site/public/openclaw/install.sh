@@ -17,7 +17,7 @@ echo -e "${ORANGE}╚═══════════════════�
 echo ""
 
 # OpenClaw skills go in ~/clawd/skills/
-INSTALL_DIR="$HOME/get-a-job-openclaw"
+INSTALL_DIR="$HOME/getajob-openclaw"
 SKILL_DIR="$HOME/clawd/skills/getajob"
 
 echo -e "${ORANGE}→${NC} Installing to ${INSTALL_DIR}..."

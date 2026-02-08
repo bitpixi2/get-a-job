@@ -13,10 +13,10 @@
             --bg-dark: #151c18;
             --bg-card: #0f1411;
             --bg-elevated: #131a15;
-            --brand: #f97316;
+            --brand: #1E90FF;
             --claude: #C15F3C;
-            --openclaw: #FF5A2D;
-            --accent-soft: rgba(249, 115, 22, 0.12);
+            --openclaw: #E81C25;
+            --accent-soft: rgba(30, 144, 255, 0.12);
             --text-main: #e8f2ec;
             --text-muted: #8ea29a;
             --text-faint: #5f6d66;
@@ -31,7 +31,7 @@
 
         body {
             font-family: 'JetBrains Mono', monospace;
-            background: radial-gradient(900px 360px at 50% -120px, rgba(249, 115, 22, 0.14), transparent 70%), var(--bg-dark);
+            background: radial-gradient(900px 360px at 50% -120px, rgba(30, 144, 255, 0.14), transparent 70%), var(--bg-dark);
             color: var(--text-main);
             min-height: 100vh;
             line-height: 1.5;
@@ -54,7 +54,7 @@
 
         .logo {
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.3rem;
             color: var(--brand);
             letter-spacing: 0.04em;
         }
@@ -67,7 +67,7 @@
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.75rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
             letter-spacing: 0.18em;
             display: inline-flex;
@@ -184,7 +184,7 @@
                 <div class="card">
                     <h2>Claude Install Layout</h2>
                     <p>The Claude installer creates a dedicated folder with scripts and references.</p>
-                    <div class="tree">~/get-a-job-claude/
+                    <div class="tree">~/getajob-claude/
 ├── SKILL.md
 ├── scripts/
 │   ├── init_workspace.py
@@ -200,10 +200,10 @@
                 <div class="card">
                     <h2>OpenClaw Install Layout</h2>
                     <p>OpenClaw installs the skill and links it into your OpenClaw skills folder.</p>
-                    <div class="tree">~/get-a-job-openclaw/
+                    <div class="tree">~/getajob-openclaw/
 └── SKILL.md
 
-~/clawd/skills/getajob -> ~/get-a-job-openclaw</div>
+~/clawd/skills/getajob -> ~/getajob-openclaw</div>
                 </div>
 
                 <div class="card">

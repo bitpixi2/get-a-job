@@ -16,7 +16,7 @@ echo -e "${ORANGE}║${NC}       ${CYAN}GetAJob${NC} — Claude AI Skill        
 echo -e "${ORANGE}╚═══════════════════════════════════════════╝${NC}"
 echo ""
 
-INSTALL_DIR="$HOME/get-a-job-claude"
+INSTALL_DIR="$HOME/getajob-claude"
 
 echo -e "${ORANGE}→${NC} Installing to ${INSTALL_DIR}..."
 

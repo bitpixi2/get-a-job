@@ -14,14 +14,14 @@ getajob-site/
 │   ├── index.html            # Landing page
 │   ├── claude/
 │   │   ├── install.sh        # Claude installer script
-│   │   ├── get-a-job-claude.zip
+│   │   ├── getajob-claude.zip
 │   │   └── skill/            # Claude skill files
 │   │       ├── SKILL.md
 │   │       ├── scripts/
 │   │       └── references/
 │   └── openclaw/
 │       ├── install.sh        # OpenClaw installer script
-│       ├── get-a-job-openclaw.zip
+│       ├── getajob-openclaw.zip
 │       └── skill/
 │           └── SKILL.md
 └── README.md

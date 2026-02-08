@@ -12,10 +12,10 @@
             --bg-dark: #151c18;
             --bg-card: #0f1411;
             --bg-elevated: #131a15;
-            --brand: #f97316;
+            --brand: #1E90FF;
             --claude: #C15F3C;
-            --openclaw: #FF5A2D;
-            --accent-soft: rgba(249, 115, 22, 0.12);
+            --openclaw: #E81C25;
+            --accent-soft: rgba(30, 144, 255, 0.12);
             --text-main: #e8f2ec;
             --text-muted: #8ea29a;
             --text-faint: #5f6d66;
@@ -30,7 +30,7 @@
 
         body {
             font-family: 'JetBrains Mono', monospace;
-            background: radial-gradient(900px 360px at 50% -120px, rgba(249, 115, 22, 0.14), transparent 70%), var(--bg-dark);
+            background: radial-gradient(900px 360px at 50% -120px, rgba(30, 144, 255, 0.14), transparent 70%), var(--bg-dark);
             color: var(--text-main);
             min-height: 100vh;
             line-height: 1.5;
@@ -64,7 +64,7 @@
 
         .logo {
             font-weight: 600;
-            font-size: 1.15rem;
+            font-size: 1.3rem;
             color: var(--brand);
             letter-spacing: 0.04em;
         }
@@ -74,7 +74,7 @@
             padding: 0.25rem 0.6rem;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            font-size: 0.6rem;
+            font-size: 0.56rem;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.2em;
@@ -88,7 +88,7 @@
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.75rem;
+            font-size: 0.68rem;
             text-transform: uppercase;
             letter-spacing: 0.18em;
             display: inline-flex;
@@ -165,6 +165,21 @@
 
         .install-card.openclaw {
             --card-accent: var(--openclaw);
+        }
+
+        .module-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 1.25rem 0.25rem;
+        }
+
+        .module-logo img {
+            max-width: 170px;
+            max-height: 52px;
+            width: auto;
+            height: auto;
+            display: block;
         }
 
         .install-card:hover {
@@ -418,6 +433,9 @@
 
         <section class="install-section" id="install">
             <div class="install-card claude">
+                <div class="module-logo">
+                    <img src="assets/claude-logo.png" alt="Claude logo">
+                </div>
                 <div class="install-header">
                     <h2>Claude</h2>
                     <span class="platform-badge">Anthropic</span>
@@ -434,7 +452,7 @@
                                 <span class="terminal-prompt">$</span>
                                 <span class="terminal-command">curl -fsSL https://getajob.bitpixi.com/claude/install.sh | bash</span>
                             </div>
-                            <p class="terminal-comment"># Installs to ~/get-a-job-claude/</p>
+                            <p class="terminal-comment"># Installs to ~/getajob-claude/</p>
                         </div>
                     </div>
                     <button class="copy-btn" onclick="copyCmd(this, 'curl -fsSL https://getajob.bitpixi.com/claude/install.sh | bash')">
@@ -448,7 +466,7 @@
                     <ul class="steps-list">
                         <li>
                             <span class="step-num">1</span>
-                            <span class="step-text">Run the curl command above. Downloads to <code>~/get-a-job-claude/</code></span>
+                            <span class="step-text">Run the curl command above. Downloads to <code>~/getajob-claude/</code></span>
                         </li>
                         <li>
                             <span class="step-num">2</span>
@@ -460,13 +478,16 @@
                         </li>
                     </ul>
 
-                    <a href="claude/get-a-job-claude.zip" class="download-link" download>
+                    <a href="claude/getajob-claude.zip" class="download-link" download>
                         ↓ Download ZIP instead
                     </a>
                 </div>
             </div>
 
             <div class="install-card openclaw">
+                <div class="module-logo">
+                    <img src="assets/openclaw-logo.png" alt="OpenClaw logo">
+                </div>
                 <div class="install-header">
                     <h2>OpenClaw</h2>
                     <span class="platform-badge">Open Source</span>
@@ -483,7 +504,7 @@
                                 <span class="terminal-prompt">$</span>
                                 <span class="terminal-command">curl -fsSL https://getajob.bitpixi.com/openclaw/install.sh | bash</span>
                             </div>
-                            <p class="terminal-comment"># Installs to ~/get-a-job-openclaw/</p>
+                            <p class="terminal-comment"># Installs to ~/getajob-openclaw/</p>
                         </div>
                     </div>
                     <button class="copy-btn" onclick="copyCmd(this, 'curl -fsSL https://getajob.bitpixi.com/openclaw/install.sh | bash')">
@@ -497,7 +518,7 @@
                     <ul class="steps-list">
                         <li>
                             <span class="step-num">1</span>
-                            <span class="step-text">Run the curl command above. Downloads to <code>~/get-a-job-openclaw/</code></span>
+                            <span class="step-text">Run the curl command above. Downloads to <code>~/getajob-openclaw/</code></span>
                         </li>
                         <li>
                             <span class="step-num">2</span>
@@ -509,7 +530,7 @@
                         </li>
                     </ul>
 
-                    <a href="openclaw/get-a-job-openclaw.zip" class="download-link" download>
+                    <a href="openclaw/getajob-openclaw.zip" class="download-link" download>
                         ↓ Download ZIP instead
                     </a>
                 </div>
