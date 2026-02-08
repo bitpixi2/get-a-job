@@ -142,6 +142,21 @@
             transform: translateY(-2px);
         }
 
+        .footer-donate {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-donate .donate-btn {
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.68rem;
+            letter-spacing: 0.05em;
+            text-transform: none;
+        }
+
         .install-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -527,7 +542,14 @@
         </div>
 
         <footer>
-            <p>Built by <a href="https://x.com/bitpixi">@bitpixi</a>, Founder of <a href="https://hackeroos.com.au">Hackeroos</a></p>
+            <p>
+                Built by <a href="https://x.com/bitpixi">@bitpixi</a>, Founder of <a href="https://hackeroos.com.au">Hackeroos</a>
+                <span aria-hidden="true"> | </span>
+                <span class="footer-donate">
+                    <span>Did you get a job?</span>
+                    <a class="donate-btn" href="https://buymeacoffee.com/hackeroos">Donate a coffee</a>
+                </span>
+            </p>
         </footer>
     </div>
 
