@@ -350,41 +350,6 @@
             margin-top: 0.5rem;
         }
 
-        .copy-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            width: 100%;
-            padding: 0.8rem;
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-family: inherit;
-            font-size: 0.8rem;
-            font-weight: 400;
-            cursor: pointer;
-            border-radius: 6px;
-            transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
-            will-change: transform;
-            margin-bottom: 1rem;
-            text-transform: none;
-            letter-spacing: 0;
-        }
-
-        .copy-btn:hover {
-            border-color: var(--card-accent);
-            color: var(--card-accent);
-            background: color-mix(in srgb, var(--card-accent) 12%, transparent);
-            transform: translateY(-2px);
-        }
-
-        .copy-btn.copied {
-            background: var(--card-accent);
-            border-color: var(--card-accent);
-            color: var(--bg-dark);
-        }
-
         .steps-list {
             list-style: none;
             margin-top: 1rem;
@@ -600,18 +565,14 @@
                             <p class="terminal-comment"># Installs to ~/getajob-openclaw/</p>
                         </div>
                     </div>
-                    <button class="copy-btn" onclick="copyCmd(this, 'curl -fsSL https://getajob.bitpixi.com/openclaw/install.sh | bash')">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="9" y="9" width="13" height="13"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                        Copy command
-                    </button>
+                    <a class="download-link" href="openclaw/install.sh" download>
+                        ↓ Download install.sh
+                    </a>
 
                     <ul class="steps-list">
                         <li>
                             <span class="step-num">1</span>
-                            <span class="step-text">Run the curl command above. Downloads to <code>~/getajob-openclaw/</code></span>
+                            <span class="step-text">Run the curl command above or download the installer above. Installs to <code>~/getajob-openclaw/</code></span>
                         </li>
                         <li>
                             <span class="step-num">2</span>
@@ -649,18 +610,14 @@
                             <p class="terminal-comment"># Installs to ~/getajob-claude/</p>
                         </div>
                     </div>
-                    <button class="copy-btn" onclick="copyCmd(this, 'curl -fsSL https://getajob.bitpixi.com/claude/install.sh | bash')">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="9" y="9" width="13" height="13"></rect>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                        </svg>
-                        Copy command
-                    </button>
+                    <a class="download-link" href="claude/install.sh" download>
+                        ↓ Download install.sh
+                    </a>
 
                     <ul class="steps-list">
                         <li>
                             <span class="step-num">1</span>
-                            <span class="step-text">Run the curl command above. Downloads to <code>~/getajob-claude/</code></span>
+                            <span class="step-text">Run the curl command above or download the installer above. Installs to <code>~/getajob-claude/</code></span>
                         </li>
                         <li>
                             <span class="step-num">2</span>
@@ -720,19 +677,6 @@
         </footer>
     </div>
 
-    <script>
-        function copyCmd(btn, cmd) {
-            navigator.clipboard.writeText(cmd).then(() => {
-                const orig = btn.innerHTML;
-                btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!';
-                btn.classList.add('copied');
-                setTimeout(() => {
-                    btn.innerHTML = orig;
-                    btn.classList.remove('copied');
-                }, 2000);
-            });
-        }
-    </script>
     <script>
         window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
     </script>
