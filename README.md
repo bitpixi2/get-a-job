@@ -2,6 +2,8 @@
 
 AI-assisted job search skill for OpenClaw and Claude. GetAJob helps to speed up your job search, build your dream companies list, hunt for existing listings in your preferences, and drafts your outreach.
 
+![GetAJob homepage](assets/getajob-homepage.png)
+
 ## Project Structure
 
 ```
